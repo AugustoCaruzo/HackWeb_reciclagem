@@ -1,58 +1,39 @@
-# 🌱 EcoLedger - Plataforma Blockchain para Reciclagem Inteligente
+# 🌱 EcoLedger - Registro de Impacto e Reciclagem Inteligente
 
-O **EcoLedger** é um MVP (Mínimo Produto Viável) desenvolvido para o desafio **ImpactLedger** no Hackweb. A solução utiliza a tecnologia Blockchain e Smart Contracts para transformar o descarte de resíduos recicláveis em registros públicos, imutáveis, rastreáveis e auditáveis, incentivando a economia circular por meio de recompensas digitais.
-
----
-
-## 🎯 O Problema
-Organizações, governos e iniciativas ecológicas enfrentam severas dificuldades para comprovar o impacto real de suas campanhas de reciclagem. Relatórios manuais, planilhas adulteráveis e a falta de métricas auditáveis geram desconfiança de investidores ESG e baixa adesão da população, que raramente vê um retorno tangível pelo seu esforço ecológico.
-
-## 💡 A Solução
-O **EcoLedger** digitaliza a cadeia de reciclagem de ponta a ponta:
-1. **Descarte:** O cidadão entrega os resíduos em um Ecoponto parceiro.
-2. **Validação On-chain:** O operador do Ecoponto valida o peso e o tipo de material através do nosso painel administrativo.
-3. **Emissão de EcoPoints:** O Smart Contract processa os dados, cria um histórico imutável do descarte e emite automaticamente **EcoPoints (Tokens ECO)** de forma proporcional ao peso reciclado direto para a carteira do cidadão.
-4. **Auditoria Pública:** Qualquer empresa ou cidadão pode acessar o Dashboard público para auditar o volume total de resíduos mitigados do meio ambiente através do ledger descentralizado.
+Este repositório contém a solução completa para o desafio **ImpactLedger (Trilha Blockchain + Smart Contracts)** desenvolvida no Hackweb.
 
 ---
 
-## 🏗️ Arquitetura da Solução
+## 🎯 1. O Problema Real Selecionado
+Campanhas de reciclagem e programas institucionais de logística reversa sofrem com a falta de credibilidade. Planilhas manuais, relatórios em PDF estáticos e a ausência de incentivos reais fazem com que os cidadãos abandonem a prática da separação de resíduos e impossibilitam que empresas validem suas métricas ESG de forma transparente para auditorias públicas.
 
-* **Frontend:** React.js / Next.js com Tailwind CSS (Interface limpa e focada em UX).
-* **Web3 Integration:** Ethers.js para comunicação com os contratos inteligentes via MetaMask.
-* **Smart Contracts:** Desenvolvidos em Solidity utilizando padrões de segurança da OpenZeppelin.
-* **Rede Blockchain:** Implantado e validado na Testnet (Polygon Amoy / Sepolia).
-
----
-
-## 📊 Requisitos Técnicos Atendidos (Checklist)
-
-- [x] **Uso de Blockchain:** Implementado na rede de testes.
-- [x] **Registro Verificável de Impacto:** Cada descarte gera uma transação com hash único.
-- [x] **Histórico Auditável:** Função pública para leitura de dados e consulta global de volume reciclado.
-- [x] **Smart Contract Funcional:** Contrato robusto com lógica de governança de impacto (`EcoLedger.sol`).
-- [x] **Código Comentado:** Toda a lógica de negócios documentada no código Solidity.
+## 💡 2. A Solução Proposta: EcoLedger
+O EcoLedger elimina a opacidade criando uma camada descentralizada de auditoria para ecopontos. 
+* **Registro Prático:** O material recebido nos postos de coleta é imediatamente inserido on-chain.
+* **Automação de Recompensas:** O Smart Contract calcula e emite **EcoPoints (Tokens ECO)** diretamente para a carteira do usuário de forma estritamente proporcional ao peso reciclado.
+* **Métricas Auditáveis:** O Dashboard exibe o contador global de material removido do meio ambiente puxando as informações de forma imutável e transparente da blockchain.
 
 ---
 
-## 🔧 Informações de Implantação e Auditoria
-
-> 🚨 **Dados da Banca Examinadora:**
-> * **Endereço do Smart Contract:** `INSIRA_AQUI_O_ENDERECO_APOS_O_DEPLOY`
-> * **Link do Explorador de Blocos (Scanner):** `INSIRA_AQUI_O_LINK_DO_POLYGONSCAN_OU_ETHERSCAN`
-> * **Token de Recompensa Emitido:** EcoPoints (ECO)
+## 🏗️ 3. Arquitetura Técnica
+* **Smart Contract:** Solidity `^0.8.20` estendendo padrões abertos da OpenZeppelin (`ERC20`, `Ownable`).
+* **Ambiente de Desenvolvimento:** Framework Hardhat e ambiente integrado VS Code.
+* **Frontend:** HTML5, Tailwind CSS e integração nativa com Web3 via Ethers.js e MetaMask.
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+## 📊 4. Evidências Obrigatórias de Entrega (Dados de Auditoria)
 
-### Pré-requisitos
-- Node.js instalado (v18 ou superior)
-- Carteira MetaMask configurada com fundos da Testnet (Faucets)
+> 🚨 **Para avaliação da Banca Examinadora:**
+> * **Endereço do Smart Contract Implantado:** `COLE_AQUI_O_ENDERECO_DO_CONTRATO_GERADO_NO_DEPLOY`
+> * **Rede Utilizada:** Polygon Amoy Testnet (ou Sepolia)
+> * **Link do Scanner Público:** [Verificar Transações On-Chain](COLE_AQUI_O_LINK_DO_EXPLORADOR_COM_SEU_CONTRATO)
 
-### Passo a Passo
+---
 
-1. **Clonar o Repositório:**
-   ```bash
-   git clone [https://github.com/SeuUsuario/SeuRepositorioEcoLedger.git](https://github.com/SeuUsuario/SeuRepositorioEcoLedger.git)
-   cd SeuRepositorioEcoLedger
+## ⚙️ 5. Como Executar e Testar o MVP
+
+### Passo 1: Instalação
+Clone o projeto e instale as dependências na pasta raiz:
+```bash
+npm install
