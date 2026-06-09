@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLedger - Dashboard de Impacto</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+        <header class="flex justify-between items-center border-b pb-4 mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-green-600">🌱 EcoLedger</h1>
+                <p class="text-sm text-gray-500">Registro de Impacto Ambiental em Blockchain</p>
+            </div>
+            <button id="btnConectar" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg shadow">
+                Conectar MetaMask
+            </button>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 font-medium text-sm uppercase">Total de Resíduos Mitigados</h3>
+                <p id="metricGlobal" class="text-4xl font-extrabold text-green-700 mt-2">0g</p>
+                <span class="text-xs text-gray-400">Dado On-Chain em tempo real</span>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 font-medium text-sm uppercase">Status da Conexão</h3>
+                <p id="walletStatus" class="text-sm font-mono text-gray-600 truncate mt-4">Não conectado</p>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <h2 class="text-xl font-bold mb-4 text-gray-700">Registrar Novo Descarte Ecológico</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Carteira do Cidadão (Wallet Receiver)</label>
+                    <input type="text" id="inputUsuario" placeholder="0x..." class="w-full mt-1 p-2 border rounded-lg font-mono text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600">Tipo de Material</label>
+                        <select id="selectMaterial" class="w-full mt-1 p-2 border rounded-lg">
+                            <option value="Plastico">Plástico</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Vidro">Vidro</option>
+                            <option value="Papel">Papel</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600">Peso (em gramas)</label>
+                        <input type="number" id="inputPeso" placeholder="Ex: 500" class="w-full mt-1 p-2 border rounded-lg">
+                    </div>
+                </div>
+                <button id="btnRegistrar" class="w-full bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed" disabled>
+                    Enviar Registro para a Blockchain
+                </button>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
